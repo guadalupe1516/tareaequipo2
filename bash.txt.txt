@@ -1,0 +1,42 @@
+1)Dejamos main.sh
+
+
+2)Creamos archivos "addTareasEquipo2.sh" con los siguientes comandos:
+
+echo "ingrese una tarea:"
+read tarea
+
+echo "$tarea" >> tareasDiarias.txt
+
+echo "La tarea ha sido agregada correctamente."
+
+
+3)delTareasEqupo2.sh
+
+echo "ingrese la cantidad de a eliminar:"
+read cantidad
+
+num_lineas=$(wc -l < tareasDiarias.txt)
+
+inicio=$((num_lineas - cantidad + 1))
+
+sed -i "${inicio},\$d" tareasDiarias.txt
+
+echo "se han eliminado las últimas $cantidad tareas correctamente."
+
+4)Creamos archivos DesafioEquipo2.sh con los siguientes comandos:
+
+echo "Ingrese el numero de linea de la tarea a eliminar:"
+read numero_linea
+
+sed -i "${numero_linea}d" tareasDiarias.txt
+
+echo "La tarea ha sido eliminada correctamente."
+
+5) Para ejecutar un archivo copiar y pegar los comandos en "main.sh" y precionar "RUN".
+
+
+
+
+
+
